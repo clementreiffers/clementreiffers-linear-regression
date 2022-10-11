@@ -1,6 +1,6 @@
+import { covariance } from "../app/covariance.js";
 import { expect } from "chai";
 import "mocha";
-import { covariance } from "../app/covariance.js";
 
 describe("../app/covariance.ts", () => {
   describe("#covariance()", () => {

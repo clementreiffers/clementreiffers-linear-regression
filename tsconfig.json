@@ -2,8 +2,13 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true
   },
-  "include": ["app/covariance.ts", "app/linear-regression.ts", "app/variance.ts"],
+  "include": [
+    "app/covariance.js",
+    "app/linear-regression.js", "app/variance.ts"],
   "exclude": ["test"],
 }

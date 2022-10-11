@@ -1,6 +1,6 @@
 # linear-regression 
 
-[![typescript](icon/typescript.svg)](https://www.typescriptlang.org/)
+[![javascript](icon/javascript.svg)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 [![npm](icon/node.svg)](https://nodejs.dev/en/)
 [![npm](icon/npm.svg)](https://npmjs.org)
 ![GitHub CI](https://github.com/clementreiffers/linear-regression/actions/workflows/node.js.yml/badge.svg)
