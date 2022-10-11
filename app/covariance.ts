@@ -15,4 +15,6 @@ const sumOfProductValuesGap_ = (x: number[], y: number[]) =>
 const covariance = (x: number[], y: number[]) =>
   R.divide(sumOfProductValuesGap_(x, y), R.length(x));
 
-export default covariance;
+const variance = (x: number[]) => covariance(x, x);
+
+export { covariance, variance };
