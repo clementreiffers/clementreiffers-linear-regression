@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "ramda": "^0.28.0",
-    "typescript": "^4.8.4"
+    "ramda": "^0.28.0"
   },
   "type": "module",
   "devDependencies": {
@@ -18,10 +17,21 @@
     "code-style": "prettier --check app/*.js"
   },
   "name": "clementreiffers-linear-regression",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "calculation of a linear regression",
   "main": "index.js",
   "repository": "https://github.com/clementreiffers/linear-regression",
   "author": "clementreiffers <reiffersclement@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "clementreiffers",
+    "reiffers",
+    "linear",
+    "regression",
+    "linear-regression",
+    "linear regression",
+    "machine learning",
+    "AI",
+    "learn"
+  ]
 }
