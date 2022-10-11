@@ -1,7 +1,6 @@
 import * as R from "ramda";
 
-const valueGap_ = (val: number, meanOfVals: number) =>
-  R.subtract(val, meanOfVals);
+const valueGap_ = (val: number, mean: number) => R.subtract(val, mean);
 
 const productOfValuesGap_ = (x: number[], y: number[]) => (index: number) =>
   R.multiply(
@@ -15,4 +14,6 @@ const sumOfProductValuesGap_ = (x: number[], y: number[]) =>
 const covariance = (x: number[], y: number[]) =>
   R.divide(sumOfProductValuesGap_(x, y), R.length(x));
 
-export default covariance;
+const variance = (x: number[]) => covariance(x, x);
+
+export { covariance, variance };

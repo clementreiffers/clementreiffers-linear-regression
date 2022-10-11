@@ -1,6 +1,43 @@
-import { linearRegression } from "../app/linear-regression";
+import { expect } from "chai";
+import "mocha";
+import linearRegression from "../app/linear-regression.js";
 
-const x = [1, 2, 3, 4, 5];
-const y = [1, 2, 3, 4, 5];
-
-console.log(linearRegression(x, y));
+describe("../app/linear-regression.ts", () => {
+  describe("#linearRegression()", () => {
+    it("linear graph without offset", () => {
+      const lr = linearRegression([1, 2, 3, 4], [1, 2, 3, 4]);
+      const { a, b } = lr;
+      expect(lr).to.be.an("Object");
+      expect(a).to.be.an("number").to.be.equal(1);
+      expect(b).to.be.an("number").to.be.equal(0);
+    });
+    it("negative graph without offset", () => {
+      const lr = linearRegression([1, 2, 3, 4], [-1, -2, -3, -4]);
+      const { a, b } = lr;
+      expect(lr).to.be.an("Object");
+      expect(a).to.be.an("number").to.be.equal(-1);
+      expect(b).to.be.an("number").to.be.equal(0);
+    });
+    it("negative graph with offset", () => {
+      const lr = linearRegression([1, 2, 3, 4], [4, 3, 2, 1]);
+      const { a, b } = lr;
+      expect(lr).to.be.an("Object");
+      expect(a).to.be.an("number").to.be.equal(-1);
+      expect(b).to.be.an("number").to.be.equal(5);
+    });
+    it("only positive offset", () => {
+      const lr = linearRegression([1, 2, 3, 4], [1, 1, 1, 1]);
+      const { a, b } = lr;
+      expect(lr).to.be.an("Object");
+      expect(a).to.be.an("number").to.be.equal(0);
+      expect(b).to.be.an("number").to.be.equal(1);
+    });
+    it("only negative offset", () => {
+      const lr = linearRegression([1, 2, 3, 4], [-1, -1, -1, -1]);
+      const { a, b } = lr;
+      expect(lr).to.be.an("Object");
+      expect(a).to.be.an("number").to.be.equal(0);
+      expect(b).to.be.an("number").to.be.equal(-1);
+    });
+  });
+});
