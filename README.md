@@ -3,7 +3,7 @@
 [![typescript](icon/typescript.svg)](https://www.typescriptlang.org/)
 [![npm](icon/node.svg)](https://nodejs.dev/en/)
 [![npm](icon/npm.svg)](https://npmjs.org)
-![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=feature-1)
+![GitHub CI](https://github.com/clementreiffers/linear-regression/actions/workflows/node.js.yml/badge.svg)
 
 Simple linear regression made in Typescript
 
