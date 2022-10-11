@@ -1,5 +1,11 @@
-import variance from "../app/variance.ts";
+import { expect } from "chai";
+import "mocha";
+import variance from "../app/variance.js";
 
-const v = variance([1, 2, 3, 5]);
-
-console.log(v);
+describe("../app/variance.ts", () => {
+  describe("#variance()", () => {
+    it("should be a number", () => {
+      expect(variance([1, 2, 3, 4])).to.be.an("number");
+    });
+  });
+});

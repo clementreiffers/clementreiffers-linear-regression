@@ -1,6 +1,6 @@
 import * as R from "ramda";
-import covariance from "./covariance";
-import variance from "./variance";
+import covariance from "./covariance.js";
+import variance from "./variance.js";
 
 const getA_ = (x: number[], y: number[]) =>
   R.divide(covariance(x, y), variance(x));
@@ -21,4 +21,4 @@ const linearRegression = (x: number[], y: number[]) =>
     })
   )([]);
 
-export { linearRegression };
+export default linearRegression;
