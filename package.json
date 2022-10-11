@@ -17,6 +17,7 @@
     "xo": "^0.52.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "code-style": "xo"
   }
 }
