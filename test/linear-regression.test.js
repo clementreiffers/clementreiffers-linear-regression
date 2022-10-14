@@ -3,7 +3,7 @@ import "mocha";
 import { linearRegression, predict } from "../app/linear-regression.js";
 import { costFunction, score } from "../app/covariance.js";
 
-describe("../app/linear-regression.ts", () => {
+describe("../app/linear-regression.js", () => {
   describe("#linearRegression()", () => {
     it("linear graph without offset", () =>
       expect(linearRegression([1, 2, 3, 4], [1, 2, 3, 4]))

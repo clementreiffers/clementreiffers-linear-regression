@@ -120,7 +120,7 @@ you can try them by executing the command `yarn test` or `npm test` in your term
 
 All tests are in `test` folder.
 ```terminal
-  ../app/covariance.ts
+  ../app/covariance.js
     #covariance()
       ✔ variance positive constant graph
       ✔ variance negative constant graph
@@ -128,7 +128,7 @@ All tests are in `test` folder.
       ✔ variance negative linear graph without offset
       ✔ covariance of random graph
 
-  ../app/linear-regression.ts
+  ../app/linear-regression.js
     #linearRegression()
       ✔ linear graph without offset
       ✔ negative graph without offset

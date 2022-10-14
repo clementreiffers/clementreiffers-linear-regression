@@ -2,7 +2,7 @@ import { covariance } from "../app/covariance.js";
 import { expect } from "chai";
 import "mocha";
 
-describe("../app/covariance.ts", () => {
+describe("../app/covariance.js", () => {
   describe("#covariance()", () => {
     it("variance positive constant graph", () => {
       expect(covariance([2, 2, 2, 2], [2, 2, 2, 2]))
