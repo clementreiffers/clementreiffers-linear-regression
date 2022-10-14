@@ -41,9 +41,16 @@ describe("../app/linear-regression.ts", () => {
     });
   });
   describe("#predict()", () => {
-    it("prediction for given parameters", () => {
+    it("prediction of a number for given parameters", () => {
       const pred = predict({ a: 5, b: 1 }, 1);
       expect(pred).to.be.an("number").to.be.equal(6);
+    });
+    it("prediction of an array for given parameters", () => {
+      const pred = predict({ a: 5, b: 1 }, [1, 2]);
+      expect(pred).to.be.an("array");
+      const [x1, x2] = pred;
+      expect(x1).to.be.equal(6);
+      expect(x2).to.be.equal(11);
     });
   });
 });
