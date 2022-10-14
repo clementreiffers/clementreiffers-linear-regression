@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import "mocha";
 import { linearRegression, predict } from "../app/linear-regression.js";
-import { costFunction } from "../app/covariance.js";
+import { costFunction, score } from "../app/covariance.js";
 
 describe("../app/linear-regression.ts", () => {
   describe("#linearRegression()", () => {
@@ -52,5 +52,15 @@ describe("../app/linear-regression.ts", () => {
       expect(costFunction([1, 2, 3, 4], [10, 9, 2, 6]))
         .to.be.an("number")
         .to.be.above(1));
+  });
+  describe("#score()", () => {
+    it("score for a prefect prediction", () =>
+      expect(score([1, 2, 3], [1, 2, 3]))
+        .to.be.an("number")
+        .to.be.above(0.9));
+    it("score for a bad prediction", () =>
+      expect(score([1, 2, 3, 4, 5, 6], [999, 20, 999, -50, 70, 2]))
+        .to.be.an("number")
+        .to.be.below(0.5));
   });
 });
