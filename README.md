@@ -155,7 +155,6 @@ see here : https://en.wikipedia.org/wiki/Linear_regression
 
 any idea to improve this package ? 
 
-some 
 - send me a message on [![discord](icon/discord.svg)]()
 - do a git issue on [![github](icon/github.svg)](https://github.com/clementreiffers/clementreiffers-linear-regression/issues)
 
