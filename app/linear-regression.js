@@ -17,4 +17,13 @@ const linearRegression = (x, y) =>
     })
   )([]);
 
-export default linearRegression;
+const predictNumber_ = (params) => (x) => params.a * x + params.b;
+
+const predictArray_ = (params) => (x) => R.map(predictNumber_(params))(x);
+
+const isPredictNumber_ = (x) => R.equals(R.type(x), "Number");
+
+const predict = (params, x) =>
+  R.ifElse(isPredictNumber_, predictNumber_(params), predictArray_(params))(x);
+
+export { linearRegression, predict };
