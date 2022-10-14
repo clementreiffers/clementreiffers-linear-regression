@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import "mocha";
-import linearRegression from "../app/linear-regression.js";
+import { linearRegression, predict } from "../app/linear-regression.js";
 
 describe("../app/linear-regression.ts", () => {
   describe("#linearRegression()", () => {
@@ -38,6 +38,12 @@ describe("../app/linear-regression.ts", () => {
       expect(lr).to.be.an("Object");
       expect(a).to.be.an("number").to.be.equal(0);
       expect(b).to.be.an("number").to.be.equal(-1);
+    });
+  });
+  describe("#predict()", () => {
+    it("prediction for given parameters", () => {
+      const pred = predict({ a: 5, b: 1 }, 1);
+      expect(pred).to.be.an("number").to.be.equal(6);
     });
   });
 });
