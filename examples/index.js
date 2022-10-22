@@ -1,18 +1,15 @@
-// you need to change the library name, it's juste shown here for test
-// the library name is "clementreiffers-linear-regression" instead of "../app/covariance.js"
-import {
-  costFunction,
-  covariance,
-  score,
-  variance,
-} from "../app/covariance.js";
-import { linearRegression, predict } from "../app/linear-regression.js";
+import { linearRegression, predict } from "../src/linear-regression.js";
 
 const x = [1, 2, 3, 4];
 const y = [1, 2, 3, 4];
+const lr = linearRegression(x, y, true); // if you want values into an Object
 
-const lr = linearRegression(x, y);
-const pred = predict(lr, x);
+// executed only if true in linearRegression Function, it gives the same result as above
+// computeLightLinearRegression(x, y);
 
-const cost = costFunction(y, pred);
-console.log(cost);
+const pred1 = predict([1, 2], lr);
+const pred2 = predict(6, lr);
+
+console.log(lr); // to show the object which represents the linear regression
+console.log(pred1); // to show the prediction of an array
+console.log(pred2); // to show th prediction of a number

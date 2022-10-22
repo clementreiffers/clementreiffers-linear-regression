@@ -1,2 +1,2 @@
-export * from "./app/linear-regression.js"
-export * from "./app/covariance.js"
+export * from "./src/linear-regression.js";
+export * from "./src/covariance.js";
