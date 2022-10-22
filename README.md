@@ -7,12 +7,16 @@
 
 Simple linear regression made in JavaScript.
 
+
 ## How to install 
 
 `npm i clementreiffers-linear-regression` or `yarn add clementreiffers-linear-regression` if you
 use yarn instead of npm.
 
 ## How to use 
+
+>**:warning: WARNING**
+>the version 2 is not compatible with version 1
 
 ### Linear Regression
 
