@@ -16,7 +16,7 @@ use yarn instead of npm.
 ## How to use 
 
 >**:warning: WARNING**
->the v2 version is not compatible with v1
+>the version 2 is not compatible with version 1
 
 ### Linear Regression
 
