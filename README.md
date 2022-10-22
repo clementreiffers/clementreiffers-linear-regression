@@ -16,15 +16,24 @@ use yarn instead of npm.
 
 ### Linear Regression
 
+#### The lightest function
+
+the lightest function is very usefull if you're interested in getting only the essential
+parameters
+
 ```js
 import { linearRegression, predict } from "clementreiffers-linear-regression";
+// import { computeLightLinearRegression } from "clementreiffers-linear-regression";
 
 const x = [1, 2, 3, 4];
 const y = [1, 2, 3, 4];
-const lr = linearRegression(x, y); // if you want values into an Object
+const lr = linearRegression(x, y, true); // if you want values into an Object
 
-const pred1 = predict(lr, [1, 2]);
-const pred2 = predict(lr, 6);
+// executed only if true in linearRegression Function, it gives the same result as above
+// computeLightLinearRegression(x, y);  
+
+const pred1 = predict([1, 2], lr);
+const pred2 = predict(6, lr);
 
 console.log(lr); // to show the object which represents the linear regression
 console.log(pred1); // to show the prediction of an array
@@ -34,8 +43,45 @@ console.log(pred2); // to show th prediction of a number
 
 by trying this example above, you will have :
 
-```terminal
-{ a: 1, b: 0 }
+```text
+{ parameters: { a: 1, b: 0 } }
+[ 1, 2 ]
+6
+```
+
+#### The loudest function
+
+it will compute all necessary calculations and put it into the same json.
+
+```js
+import { linearRegression, predict } from "clementreiffers-linear-regression";
+// import { computeLoudLinearRegression } from "clementreiffers-linear-regression";
+
+const x = [1, 2, 3, 4];
+const y = [1, 2, 3, 4];
+const lr = linearRegression(x, y); // if you want values into an Object
+
+// executed by default, it gives the same result as above
+// computeLoudLinearRegression(x, y); 
+
+const pred1 = predict([1, 2], lr);
+const pred2 = predict(6, lr);
+
+console.log(lr); // to show the object which represents the linear regression
+console.log(pred1); // to show the prediction of an array
+console.log(pred2); // to show th prediction of a number
+
+```
+
+by trying this example above, you will have :
+
+```text
+{
+  parameters: { a: 1, b: 0 },
+  trainData: { x: [ 1, 2, 3, 4 ], y: [ 1, 2, 3, 4 ] },
+  trainCurvePredict: [ 1, 2, 3, 4 ],
+  statistics: { r2: 0.9999999999999996, cost: 0, pearson: 0.9999999999999998 }
+}
 [ 1, 2 ]
 6
 ```
@@ -53,7 +99,7 @@ console.log(cov);
 
 by trying this example above you will have : 
 
-```terminal
+```text
 1.25
 ```
 
@@ -69,7 +115,7 @@ console.log(vari);
 
 by trying this example, you will have : 
 
-```terminal 
+```text 
 1.25
 ```
 
@@ -89,7 +135,7 @@ console.log(score(x, y));
 
 by executing this code you will have :
 
-```terminal
+```text
 0.9999999999999996
 ```
 
@@ -110,7 +156,7 @@ console.log(cost);
 
 by executing this function you will have :
 
-```terminal
+```text
 0
 ```
 
@@ -119,7 +165,7 @@ by executing this function you will have :
 you can try them by executing the command `yarn test` or `npm test` in your terminal.
 
 All tests are in `test` folder.
-```terminal
+```text
   ../app/covariance.js
     #covariance()
       ✔ variance positive constant graph

@@ -5,15 +5,15 @@
   "type": "module",
   "devDependencies": {
     "chai": "^4.3.6",
-    "mocha": "^10.0.0",
+    "mocha": "^10.1.0",
     "prettier": "^2.7.1"
   },
   "scripts": {
     "test": "mocha",
-    "code-style": "prettier --check app/*.js"
+    "code-style": "prettier --check src/*.js"
   },
   "name": "clementreiffers-linear-regression",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "calculation of a linear regression",
   "main": "index.js",
   "repository": "https://github.com/clementreiffers/linear-regression",

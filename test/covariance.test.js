@@ -1,9 +1,9 @@
-import { covariance } from "../app/covariance.js";
+import { covariance } from "../src/covariance.js";
 import { expect } from "chai";
 import "mocha";
 import { negAsc, negCst, posAsc, posCst, rng } from "./test.constants.js";
 
-describe("../app/covariance.js", () => {
+describe("../src/covariance.js", () => {
   describe("#covariance()", () => {
     it("variance positive constant graph", () => {
       expect(covariance(posAsc, posCst)).to.be.an("number").to.be.equal(0);
