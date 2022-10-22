@@ -40,4 +40,4 @@ const pearson = (x, y) =>
 
 const score = (x, y) => square_(pearson(x, y));
 
-export { covariance, variance, score, costFunction };
+export { covariance, variance, score, costFunction, pearson };

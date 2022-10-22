@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import "mocha";
-import { linearRegression, predict } from "../app/linear-regression.js";
-import { costFunction, score } from "../app/covariance.js";
+import { linearRegression, predict } from "../src/linear-regression.js";
+import { costFunction, score } from "../src/covariance.js";
 import {
   negAsc,
   negCst,
@@ -11,41 +11,41 @@ import {
   rng,
 } from "./test.constants.js";
 
-describe("../app/linear-regression.js", () => {
+describe("../src/linear-regression.js", () => {
   describe("#linearRegression()", () => {
     it("linear graph without offset", () =>
-      expect(linearRegression(posAsc, posAsc))
+      expect(linearRegression(posAsc, posAsc, true))
         .to.be.an("Object")
-        .to.deep.equal({ a: 1, b: 0 }));
+        .to.deep.equal({ parameters: { a: 1, b: 0 } }));
 
     it("negative graph without offset", () =>
-      expect(linearRegression(posAsc, negAsc))
+      expect(linearRegression(posAsc, negAsc, true))
         .to.be.an("Object")
-        .to.deep.equal({ a: -1, b: 0 }));
+        .to.deep.equal({ parameters: { a: -1, b: 0 } }));
 
     it("negative graph with offset", () =>
-      expect(linearRegression(posAsc, posDesc))
+      expect(linearRegression(posAsc, posDesc, true))
         .to.be.an("Object")
-        .to.deep.equal({ a: -1, b: 6 }));
+        .to.deep.equal({ parameters: { a: -1, b: 6 } }));
 
     it("only positive offset", () =>
-      expect(linearRegression(posAsc, posCst))
+      expect(linearRegression(posAsc, posCst, true))
         .to.be.an("Object")
-        .to.deep.equal({ a: 0, b: -2 }));
+        .to.deep.equal({ parameters: { a: 0, b: -2 } }));
 
     it("only negative offset", () =>
-      expect(linearRegression(posAsc, negCst))
+      expect(linearRegression(posAsc, negCst, true))
         .to.be.an("Object")
-        .to.deep.equal({ a: 0, b: -2 }));
+        .to.deep.equal({ parameters: { a: 0, b: -2 } }));
   });
 
   describe("#predict()", () => {
     it("prediction of a number for given parameters", () => {
-      const pred = predict({ a: 5, b: 1 }, 1);
+      const pred = predict(1, { parameters: { a: 5, b: 1 } });
       expect(pred).to.be.an("number").to.be.equal(6);
     });
     it("prediction of an array for given parameters", () =>
-      expect(predict({ a: 5, b: 1 }, [1, 2]))
+      expect(predict([1, 2], { parameters: { a: 5, b: 1 } }))
         .to.be.an("array")
         .to.deep.equal([6, 11]));
   });
