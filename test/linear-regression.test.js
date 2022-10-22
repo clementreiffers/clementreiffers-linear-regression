@@ -2,33 +2,41 @@ import { expect } from "chai";
 import "mocha";
 import { linearRegression, predict } from "../app/linear-regression.js";
 import { costFunction, score } from "../app/covariance.js";
+import {
+  negAsc,
+  negCst,
+  posAsc,
+  posCst,
+  posDesc,
+  rng,
+} from "./test.constants.js";
 
 describe("../app/linear-regression.js", () => {
   describe("#linearRegression()", () => {
     it("linear graph without offset", () =>
-      expect(linearRegression([1, 2, 3, 4], [1, 2, 3, 4]))
+      expect(linearRegression(posAsc, posAsc))
         .to.be.an("Object")
         .to.deep.equal({ a: 1, b: 0 }));
 
     it("negative graph without offset", () =>
-      expect(linearRegression([1, 2, 3, 4], [-1, -2, -3, -4]))
+      expect(linearRegression(posAsc, negAsc))
         .to.be.an("Object")
         .to.deep.equal({ a: -1, b: 0 }));
 
     it("negative graph with offset", () =>
-      expect(linearRegression([1, 2, 3, 4], [4, 3, 2, 1]))
+      expect(linearRegression(posAsc, posDesc))
         .to.be.an("Object")
-        .to.deep.equal({ a: -1, b: 5 }));
+        .to.deep.equal({ a: -1, b: 6 }));
 
     it("only positive offset", () =>
-      expect(linearRegression([1, 2, 3, 4], [1, 1, 1, 1]))
+      expect(linearRegression(posAsc, posCst))
         .to.be.an("Object")
-        .to.deep.equal({ a: 0, b: 1 }));
+        .to.deep.equal({ a: 0, b: -2 }));
 
     it("only negative offset", () =>
-      expect(linearRegression([1, 2, 3, 4], [-1, -1, -1, -1]))
+      expect(linearRegression(posAsc, negCst))
         .to.be.an("Object")
-        .to.deep.equal({ a: 0, b: -1 }));
+        .to.deep.equal({ a: 0, b: -2 }));
   });
 
   describe("#predict()", () => {
@@ -44,23 +52,15 @@ describe("../app/linear-regression.js", () => {
 
   describe("#costFunction()", () => {
     it("cost for a perfect prediction", () =>
-      expect(costFunction([1, 2, 3, 4], [1, 2, 3, 4]))
-        .to.be.an("number")
-        .to.be.equal(0));
+      expect(costFunction(posAsc, posAsc)).to.be.an("number").to.be.equal(0));
 
     it("cost for a bad prediction", () =>
-      expect(costFunction([1, 2, 3, 4], [10, 9, 2, 6]))
-        .to.be.an("number")
-        .to.be.above(1));
+      expect(costFunction(posAsc, rng)).to.be.an("number").to.be.above(1));
   });
   describe("#score()", () => {
     it("score for a prefect prediction", () =>
-      expect(score([1, 2, 3], [1, 2, 3]))
-        .to.be.an("number")
-        .to.be.above(0.9));
+      expect(score(posAsc, posAsc)).to.be.an("number").to.be.above(0.9));
     it("score for a bad prediction", () =>
-      expect(score([1, 2, 3, 4, 5, 6], [999, 20, 999, -50, 70, 2]))
-        .to.be.an("number")
-        .to.be.below(0.5));
+      expect(score(posAsc, rng)).to.be.an("number").to.be.below(0.5));
   });
 });
