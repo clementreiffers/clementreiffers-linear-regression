@@ -13,7 +13,7 @@
     "code-style": "prettier --check app/*.js"
   },
   "name": "clementreiffers-linear-regression",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "calculation of a linear regression",
   "main": "index.js",
   "repository": "https://github.com/clementreiffers/linear-regression",
