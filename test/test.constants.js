@@ -5,4 +5,4 @@ const posDesc = [5, 4, 3, 2];
 const negAsc = [-1, -2, -3, -4];
 const rng = [5, 3, 9, 6];
 
-export { negCst, posCst, posAsc, negAsc, rng, posDesc };
+export {negCst, posCst, posAsc, negAsc, rng, posDesc};
