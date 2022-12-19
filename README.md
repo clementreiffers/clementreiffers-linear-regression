@@ -164,38 +164,6 @@ by executing this function you will have :
 0
 ```
 
-## unit test realized 
-
-you can try them by executing the command `yarn test` or `npm test` in your terminal.
-
-All tests are in `test` folder.
-```text
-  ../app/covariance.js
-    #covariance()
-      ✔ variance positive constant graph
-      ✔ variance negative constant graph
-      ✔ variance positive linear graph without offset
-      ✔ variance negative linear graph without offset
-      ✔ covariance of random graph
-
-  ../app/linear-regression.js
-    #linearRegression()
-      ✔ linear graph without offset
-      ✔ negative graph without offset
-      ✔ negative graph with offset
-      ✔ only positive offset
-      ✔ only negative offset
-    #predict()
-      ✔ prediction of a number for given parameters
-      ✔ prediction of an array for given parameters
-    #costFunction()
-      ✔ cost for a perfect prediction
-      ✔ cost for a bad prediction
-    #score()
-      ✔ score for a prefect prediction
-      ✔ score for a bad prediction
-```
-
 ## How it is calculated 
 
 this package use the Covariance and Variance to calculate the linear regression,
@@ -208,7 +176,7 @@ any idea to improve this package ?
 
 - email me to : [clement.reiffers@esme.fr](mailto://clement.reiffers@esme.fr)
 - do a git issue on [![github](icon/github.svg)](https://github.com/clementreiffers/clementreiffers-linear-regression/issues)
-
+- contact me on linkedin : https://www.linkedin.com/in/cl%C3%A9ment-reiffers-bb8983185/
 ## Links
 
 See the source code on [![github](icon/github.svg)](https://github.com/clementreiffers/clementreiffers-linear-regression)
