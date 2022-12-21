@@ -107,21 +107,6 @@ by trying this example above you will have :
 1.25
 ```
 
-### Variance 
-
-```js
-import { variance } from "clementreiffers-linear-regression";
-
-const x = [1, 2, 3, 4];
-const vari = variance(x); // it gives you the variance of x
-console.log(vari);
-```
-
-by trying this example, you will have : 
-
-```text 
-1.25
-```
 
 ### score
 
