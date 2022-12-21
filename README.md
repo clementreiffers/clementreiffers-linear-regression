@@ -13,10 +13,7 @@ Simple linear regression made in JavaScript.
 `npm i clementreiffers-linear-regression` or `yarn add clementreiffers-linear-regression` if you
 use yarn instead of npm.
 
-## How to use 
-
->**:warning: WARNING**
->the version 2 is not compatible with version 1
+## How to use
 
 ### Linear Regression
 
@@ -40,8 +37,6 @@ const pred1 = predict([1, 2], lr);
 const pred2 = predict(6, lr);
 
 console.log(lr); // to show the object which represents the linear regression
-console.log(pred1); // to show the prediction of an array
-console.log(pred2); // to show th prediction of a number
 
 ```
 
@@ -49,8 +44,6 @@ by trying this example above, you will have :
 
 ```text
 { parameters: { a: 1, b: 0 } }
-[ 1, 2 ]
-6
 ```
 
 #### The loudest function
@@ -72,8 +65,6 @@ const pred1 = predict([1, 2], lr);
 const pred2 = predict(6, lr);
 
 console.log(lr); // to show the object which represents the linear regression
-console.log(pred1); // to show the prediction of an array
-console.log(pred2); // to show th prediction of a number
 
 ```
 
@@ -86,8 +77,6 @@ by trying this example above, you will have :
   trainCurvePredict: [ 1, 2, 3, 4 ],
   statistics: { r2: 0.9999999999999996, cost: 0, pearson: 0.9999999999999998 }
 }
-[ 1, 2 ]
-6
 ```
 
 

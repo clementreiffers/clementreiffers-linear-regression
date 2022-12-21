@@ -26,7 +26,6 @@ jobs:
     - run: npm run test
     - run: git config --global user.email "reiffersclement@gmail.com"
     - run: git config --global user.name "clementreiffers"
-    - run: npm version patch
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
