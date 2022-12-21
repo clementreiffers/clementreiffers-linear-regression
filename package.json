@@ -14,7 +14,7 @@
     "code-style": "eslint src"
   },
   "name": "clementreiffers-linear-regression",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "calculation of a linear regression",
   "main": "index.js",
   "repository": "https://github.com/clementreiffers/linear-regression",
