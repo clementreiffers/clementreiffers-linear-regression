@@ -90,23 +90,6 @@ by trying this example above, you will have :
 6
 ```
 
-### Covariance 
-
-```js
-import { covariance } from "clementreiffers-linear-regression";
-
-const x = [1, 2, 3, 4];
-const y = [1, 2, 3, 4];
-const cov = covariance(x, y); // it gives you the covariance of x and y
-console.log(cov);
-```
-
-by trying this example above you will have : 
-
-```text
-1.25
-```
-
 
 ### score
 
